@@ -2,27 +2,31 @@ def strStr(haystack, needle)
   finalAnswer = -1
   length = needle.length - 1
 
+
   if needle.length == 0
-    finalAnswer = 0;
-  elsif haystack.length >= needle.haystack
-    (0..haystack.length).each do |n| 
-      pointerX = n
+    finalAnswer = 0
+  elsif haystack.length >= needle.length
+    haystack.split('').each_with_index {
+      |n, idx|
+      pointerX = idx
       count = 0
-      if needle[0] == haystack[n]
-        (0..needle.length).each { |y|
-          if needle[y] == haystack[pointerX]
-            count ++
+      if needle[0] == haystack[idx]
+        needle.split('').each_with_index {
+          |y, idy|
+          if needle[idy] == haystack[pointerX]
+            count++
           end
-          pointerX ++
+          pointerX++
         }
       end
       if count == needle.length
-        finalAnswer = n
+        finalAnswer = idx
         break
       end
-    end
+    }
   end
-  puts finalAnswer
+
+  finalAnswer
 end
 
 strStr('hello','ll')
