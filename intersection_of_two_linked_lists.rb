@@ -23,4 +23,10 @@ class LinkedList
       @tail = newnode
     end
   end
+
+  def add_array(arr)
+    (0..arr.length).each { |u| 
+      add(arr[n])
+    }
+  end
 end
