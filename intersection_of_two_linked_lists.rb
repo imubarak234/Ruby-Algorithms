@@ -83,6 +83,53 @@ def getIntersectionNode()
   node = myList.head 
   node_two = my_list_two.head
 
+  if myList.head == my_list_two.head
+    myList.head.val
+  elsif countNode == countNode2
+
+    while node_two 
+      if countNode == countNode2
+        if isRepeated
+          if (node.val == node_two.val) && (countNode <= 3)
+            node.val
+          end
+        else 
+          if node.val == node_two.val
+            node.val
+          end
+        end
+        
+        node = node.next_node
+        countNode = countNode - 1
+      end
+
+      node_two = node_two.next_node
+      countNode2 = countNode2 - 1
+    end
+
+  elsif countNode > countNode2
+
+    while node
+      if countNode == countNode2
+        if isRepeated 
+          if (node_two.val == node.val) && (countNode2 <= 3)
+            node_two.val
+          end
+        else 
+          if node_two.val == node.val
+            node.val
+          end
+        end
+
+        node_two = node_two.next_node
+        countNode2 = countNode2 - 1
+
+      end
+
+      node = node.next_node
+      countNode = countNode - 1
+    end
+  end
 
 
 end
